@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Farmacia Cruz | Pharmacy in Calilliauan, Solana, Cagayan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Enhanced text shadow for maximum readability over background */
+        .hero-text-shadow {
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-emerald-800 text-white text-[11px] sm:text-xs md:text-sm py-1.5 px-3 sm:px-4 text-center font-medium shadow-sm">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-6 gap-y-1">
+            <span class="flex items-center gap-1.5 leading-snug">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-300 shrink-0"></i>
+                <span>WESTERN SOLANA PUBLIC MARKET, CALILLIAUAN, SOLANA, CAGAYAN</span>
+            </span>
+            <span class="hidden md:inline text-emerald-600">|</span>
+            <span class="flex items-center gap-1.5">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-300 shrink-0"></i>
+                <span>Open Daily: 6:30 AM – 5:50 PM</span>
+            </span>
+            <span class="hidden lg:inline text-emerald-600">|</span>
+            <span class="flex items-center gap-1.5 text-emerald-200">
+                <i data-lucide="wallet" class="w-3.5 h-3.5 text-emerald-300 shrink-0"></i>
+                <span>GCash & Cash</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Sticky Header with Logo & Navigation -->
+    <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3">
+            
+            <!-- Official Logo -->
+            <a href="#hero" class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+                <img 
+                    src="src/logo.png" 
+                    alt="Farmacia Cruz Logo" 
+                    class="h-9 sm:h-12 w-auto object-contain drop-shadow-sm"
+                >
+                <div class="border-l border-slate-200 pl-2.5 sm:pl-3">
+                    <h1 class="font-extrabold text-xs sm:text-base text-emerald-900 leading-tight tracking-tight">FARMACIA CRUZ</h1>
+                    <p class="text-[9px] sm:text-[10px] text-emerald-700 font-bold tracking-wide uppercase">Calilliauan, Solana</p>
+                </div>
+            </a>
+
+            <!-- Modern Capsule Navigation Bar (Desktop) -->
+            <nav class="hidden lg:flex items-center bg-slate-100/90 border border-slate-200/80 p-1.5 rounded-full shadow-inner gap-1">
+                <a href="#hero" class="px-4 py-1.5 rounded-full text-slate-700 hover:text-emerald-700 hover:bg-white hover:shadow-sm font-semibold transition-all duration-200 text-xs uppercase tracking-wide">Home</a>
+                <a href="#pharmacist" class="px-4 py-1.5 rounded-full text-slate-700 hover:text-emerald-700 hover:bg-white hover:shadow-sm font-semibold transition-all duration-200 text-xs uppercase tracking-wide">Pharmacist Care</a>
+                <a href="#services" class="px-4 py-1.5 rounded-full text-slate-700 hover:text-emerald-700 hover:bg-white hover:shadow-sm font-semibold transition-all duration-200 text-xs uppercase tracking-wide">Products</a>
+                <a href="#medicine-search" class="px-4 py-1.5 rounded-full text-slate-700 hover:text-emerald-700 hover:bg-white hover:shadow-sm font-semibold transition-all duration-200 text-xs uppercase tracking-wide">Stock Guide</a>
+                <a href="#payments" class="px-4 py-1.5 rounded-full text-slate-700 hover:text-emerald-700 hover:bg-white hover:shadow-sm font-semibold transition-all duration-200 text-xs uppercase tracking-wide">Payments</a>
+                <a href="#inquiry-form" class="px-4 py-1.5 rounded-full text-slate-700 hover:text-emerald-700 hover:bg-white hover:shadow-sm font-semibold transition-all duration-200 text-xs uppercase tracking-wide">Order Online</a>
+            </nav>
+
+            <!-- Action Button & Mobile Toggle -->
+            <div class="flex items-center gap-2">
+                <a href="tel:09171234567" class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 min-h-[40px] text-xs sm:text-sm font-bold text-emerald-700 bg-emerald-50 rounded-full hover:bg-emerald-100 transition border border-emerald-200/80 shadow-sm">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span class="hidden xs:inline">Call Store</span>
+                    <span class="xs:hidden">Call</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation" class="lg:hidden p-2.5 min-h-[40px] min-w-[40px] flex items-center justify-center rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-200 focus:outline-none transition">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Floating Card -->
+        <div id="mobileMenu" class="hidden lg:hidden max-w-6xl mx-auto px-4 pb-4">
+            <div class="bg-slate-900/95 backdrop-blur-md text-white rounded-2xl p-2.5 border border-slate-800 shadow-2xl space-y-1 text-sm font-medium">
+                <a href="#hero" onclick="toggleMobileMenu()" class="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-slate-800 hover:text-emerald-400 transition min-h-[44px]">
+                    <span>Home</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i>
+                </a>
+                <a href="#pharmacist" onclick="toggleMobileMenu()" class="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-slate-800 hover:text-emerald-400 transition min-h-[44px]">
+                    <span>Pharmacist Care</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i>
+                </a>
+                <a href="#services" onclick="toggleMobileMenu()" class="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-slate-800 hover:text-emerald-400 transition min-h-[44px]">
+                    <span>Products & Services</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i>
+                </a>
+                <a href="#medicine-search" onclick="toggleMobileMenu()" class="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-slate-800 hover:text-emerald-400 transition min-h-[44px]">
+                    <span>Medicine Stock Guide</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i>
+                </a>
+                <a href="#payments" onclick="toggleMobileMenu()" class="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-slate-800 hover:text-emerald-400 transition min-h-[44px]">
+                    <span>Payment Options</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i>
+                </a>
+                <a href="#inquiry-form" onclick="toggleMobileMenu()" class="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-slate-800 hover:text-emerald-400 transition min-h-[44px]">
+                    <span>Order / Inquire</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section 
+        id="hero" 
+        style="background: linear-gradient(to right, rgba(15, 23, 42, 0.70), rgba(15, 23, 42, 0.40)), url('src/hero-bg.jpg') center/cover no-repeat;"
+        class="text-white py-6 sm:py-12 border-b border-slate-800 relative"
+    >
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid md:grid-cols-12 gap-6 sm:gap-8 items-center">
+                
+                <!-- Headline & Store Overview -->
+                <div class="md:col-span-7 space-y-4 sm:space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-slate-900/90 text-emerald-300 border border-emerald-500/40 backdrop-blur-md shadow-lg max-w-full">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                        <span>Licensed Registered Pharmacist On Duty</span>
+                    </div>
+                    
+                    <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight sm:leading-none text-white hero-text-shadow">
+                        Your Trusted Community Pharmacy in Solana
+                    </h2>
+                    
+                    <!-- Action Buttons -->
+                    <div class="pt-2 flex flex-col xs:flex-row flex-wrap gap-3">
+                        <a href="#inquiry-form" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[48px] text-sm sm:text-base font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition shadow-2xl">
+                            <i data-lucide="file-text" class="w-5 h-5"></i>
+                            Order / Inquire Meds
+                        </a>
+                        <a href="#medicine-search" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[48px] text-sm sm:text-base font-bold text-white bg-slate-900/85 hover:bg-slate-800 rounded-xl transition border border-slate-700/80 backdrop-blur-md shadow-2xl">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                            Check Stock Availability
+                        </a>
+                    </div>
+
+                    <!-- Quick Highlights Strip -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-4 border-t border-slate-700/60 text-xs sm:text-sm font-medium">
+                        <div class="flex items-center gap-2 text-slate-100 hero-text-shadow">
+                            <i data-lucide="clock" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                            <span>6:30 AM – 5:30 PM Daily</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-100 hero-text-shadow">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                            <span>Calilliauan, Solana</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-100 hero-text-shadow col-span-2 sm:col-span-1">
+                            <i data-lucide="wallet" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                            <span>GCash & Cash</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Pharmacist Spotlight Card -->
+                <div class="md:col-span-5">
+                    <div class="bg-slate-900/95 border border-slate-700/90 p-4 sm:p-6 rounded-3xl shadow-2xl backdrop-blur-md space-y-4 relative overflow-hidden group">
+                        
+                        <!-- Top Header Tag -->
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider">
+                                <i data-lucide="user-check" class="w-4 h-4"></i>
+                                Meet Your Pharmacist
+                            </span>
+                            <span class="text-[10px] sm:text-[11px] bg-emerald-500/20 text-emerald-300 font-semibold px-2.5 py-0.5 rounded-full border border-emerald-500/30">PPhA Member</span>
+                        </div>
+
+                        <!-- Pharmacist Image & Quick Bio -->
+                        <div class="flex flex-col xs:flex-row md:flex-col items-center gap-4">
+                            <div class="relative w-full xs:w-36 sm:w-40 md:w-full h-52 xs:h-44 md:h-60 rounded-2xl overflow-hidden border-2 border-emerald-500/50 shadow-lg shrink-0">
+                                <img 
+                                    src="src/pharmacist.jpg" 
+                                    alt="Farmacia Cruz Registered Pharmacist" 
+                                    class="w-full h-full object-cover object-[35%_20%] group-hover:scale-105 transition duration-500"
+                                >
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-2 text-center">
+                                    <p class="text-white font-bold text-xs sm:text-sm">Farmacia Cruz Owner</p>
+                                    <p class="text-emerald-400 text-[10px] font-semibold uppercase tracking-wider">Registered Pharmacist</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-200">
+                                <p class="leading-relaxed text-slate-300">
+                                    Get expert prescription evaluations, generic medicine consultation, and personalized health guidance directly at our store counter.
+                                </p>
+                                <ul class="space-y-1.5 text-xs text-slate-300 font-medium pt-1">
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                                        <span>100% FDA-Approved Medicines</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                                        <span>Prescription & OTC Counseling</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Viber Direct Message CTA -->
+                        <a href="https://viber.click/09171234567" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 px-4 min-h-[44px] bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-xs sm:text-sm transition shadow-md">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Consult Pharmacist via Viber</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Pharmacist Expertise Section -->
+    <section id="pharmacist" class="py-10 sm:py-16 bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="bg-gradient-to-br from-emerald-900 to-slate-900 text-white rounded-3xl p-5 sm:p-10 shadow-xl overflow-hidden">
+                <div class="grid md:grid-cols-12 gap-6 sm:gap-8 items-center">
+                    
+                    <!-- Pharmacist Details -->
+                    <div class="md:col-span-8 space-y-4 sm:space-y-5">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                            <i data-lucide="award" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                            <span>Philippine Pharmacists Association (PPhA) Member</span>
+                        </div>
+
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Professional Patient Care & Licensed Pharmacy Expertise
+                        </h2>
+
+                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
+                            At <strong class="text-white">Farmacia Cruz</strong>, your family's health is directly guided by a licensed Registered Pharmacist. We prioritize accurate doctor prescription evaluation, proper medicine usage counseling, and safe dosage instructions for all residents of Calilliauan and Solana.
+                        </p>
+
+                        <!-- Key Pillars -->
+                        <div class="grid sm:grid-cols-2 gap-3 pt-2">
+                            <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-3.5 flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h3 class="font-bold text-white text-xs sm:text-sm">Licensed Prescription Dispensing</h3>
+                                    <p class="text-slate-400 text-xs mt-0.5">100% FDA-approved medicine sourcing</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-3.5 flex items-start gap-3">
+                                <i data-lucide="heart-handshake" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h3 class="font-bold text-white text-xs sm:text-sm">Personal Patient Guidance</h3>
+                                    <p class="text-slate-400 text-xs mt-0.5">Free counseling on generic alternatives</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-4 bg-slate-800/90 border border-slate-700 p-5 sm:p-6 rounded-2xl text-center space-y-3 sm:space-y-4">
+                        <i data-lucide="shield-alert" class="w-9 h-9 text-emerald-400 mx-auto"></i>
+                        <h3 class="font-bold text-base sm:text-lg text-white">Have a Doctor's Prescription?</h3>
+                        <p class="text-xs text-slate-300">Send us a photo of your doctor's prescription for quick validation and preparation before store pickup.</p>
+                        <a href="#inquiry-form" class="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] text-xs font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 rounded-xl transition shadow-lg w-full">
+                            <i data-lucide="upload" class="w-4 h-4"></i>
+                            Reserve Prescription Meds
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products & Categories Section -->
+    <section id="services" class="py-10 sm:py-16 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+                <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">Pharmacy Offerings</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Products & Services</h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1">Authentic medicines sourced directly from authorized pharmaceutical suppliers.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+                <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm text-center hover:border-emerald-500 transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-2.5 sm:mb-3">
+                        <i data-lucide="heart-pulse" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm sm:text-base">Maintenance Meds</h3>
+                    <p class="text-[11px] sm:text-xs text-slate-500 mt-1">Hypertension, Diabetes, Cholesterol, Heart Care</p>
+                </div>
+
+                <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm text-center hover:border-emerald-500 transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-2.5 sm:mb-3">
+                        <i data-lucide="pill" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm sm:text-base">OTC Medicines</h3>
+                    <p class="text-[11px] sm:text-xs text-slate-500 mt-1">Cough, Colds, Fever, Pain Relief, Allergy</p>
+                </div>
+
+                <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm text-center hover:border-emerald-500 transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-2.5 sm:mb-3">
+                        <i data-lucide="sparkles" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm sm:text-base">Vitamins & Supplements</h3>
+                    <p class="text-[11px] sm:text-xs text-slate-500 mt-1">Vitamin C, Zinc, Multivitamins, Calcium</p>
+                </div>
+
+                <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm text-center hover:border-emerald-500 transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-2.5 sm:mb-3">
+                        <i data-lucide="baby" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm sm:text-base">Baby & Care Essentials</h3>
+                    <p class="text-[11px] sm:text-xs text-slate-500 mt-1">First Aid, Diagnostics, Baby Care Supplies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medicine Stock & Availability Guide -->
+    <section id="medicine-search" class="py-10 sm:py-16 bg-white border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-6 sm:mb-8">
+                <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">Instant Reference</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Medicine Availability Guide</h2>
+                <p class="text-slate-600 text-xs sm:text-sm">Search common items available at Farmacia Cruz.</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="relative max-w-lg mx-auto mb-5 sm:mb-6">
+                <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-4 top-3.5"></i>
+                <input type="text" id="searchInput" onkeyup="filterMedicines()" placeholder="Search medicine (e.g. Amlodipine, Paracetamol)..." class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-full text-base sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition min-h-[48px]">
+            </div>
+
+            <!-- Medicine Availability Table -->
+            <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm -mx-2 sm:mx-0">
+                <table class="w-full text-left text-xs sm:text-sm text-slate-700 min-w-[500px]">
+                    <thead class="bg-slate-100 text-slate-800 uppercase font-bold text-[11px] sm:text-xs border-b border-slate-200">
+                        <tr>
+                            <th class="py-3 px-3 sm:px-4">Medicine Name</th>
+                            <th class="py-3 px-3 sm:px-4">Category</th>
+                            <th class="py-3 px-3 sm:px-4">Dosage / Strength</th>
+                            <th class="py-3 px-3 sm:px-4 text-center">Stock Availability</th>
+                        </tr>
+                    </thead>
+                    <tbody id="medicineTableBody" class="divide-y divide-slate-200 bg-white">
+                        <!-- Populated dynamically via JS -->
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-[11px] sm:text-xs text-slate-400 text-center mt-3">* Stock status is updated regularly. Contact store staff to reserve or inquire about specific brands.</p>
+        </div>
+    </section>
+
+    <!-- Payment Options Section -->
+    <section id="payments" class="py-10 sm:py-16 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+                <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">Cashless & Easy</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Accepted Payment Options</h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1">Pay conveniently at the counter or via GCash for reserved orders.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                <!-- GCash Payment Card -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl border border-blue-200 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold uppercase px-3 py-1 rounded-bl-xl">
+                        Recommended
+                    </div>
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                        <i data-lucide="smartphone" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-base sm:text-lg text-slate-900">GCash Express</h3>
+                    <p class="text-xs text-slate-500 mt-1">Fast and cashless payment via GCash mobile transfer.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-xs space-y-1">
+                        <p class="text-slate-600"><span class="font-semibold text-slate-800">GCash Number:</span> 0917-123-4567</p>
+                        <p class="text-slate-600"><span class="font-semibold text-slate-800">Account Name:</span> Farmacia Cruz</p>
+                        <p class="text-emerald-700 font-medium pt-1">✓ Send screenshot via Viber for quick verification</p>
+                    </div>
+                </div>
+
+                <!-- QR Ph / Maya Card -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                        <i data-lucide="qr-code" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-base sm:text-lg text-slate-900">QR Ph & Maya</h3>
+                    <p class="text-xs text-slate-500 mt-1">Scan to pay using Maya or any PH banking app supporting QR Ph.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-xs space-y-1">
+                        <p class="text-slate-600"><span class="font-semibold text-slate-800">Supported:</span> Maya, BDO, BPI, UnionBank, Landbank</p>
+                        <p class="text-emerald-700 font-medium pt-1">✓ Counter QR standee available at market store</p>
+                    </div>
+                </div>
+
+                <!-- Over the Counter Cash Card -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-slate-100 text-slate-700 rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                        <i data-lucide="banknote" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-base sm:text-lg text-slate-900">Cash on Store Pickup</h3>
+                    <p class="text-xs text-slate-500 mt-1">Traditional cash payment directly at our pharmacy counter.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-xs space-y-1">
+                        <p class="text-slate-600"><span class="font-semibold text-slate-800">Location:</span> Calilliauan, Solana, Cagayan</p>
+                        <p class="text-emerald-700 font-medium pt-1">✓ Senior Citizen & PWD discounts honored</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order & Inquiry Form Section -->
+    <section id="inquiry-form" class="py-10 sm:py-16 bg-white border-b border-slate-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 sm:p-8 shadow-sm">
+                <div class="mb-5 sm:mb-6">
+                    <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">Fast Reservation</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Send Medicine Inquiry / Order</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-1">Submit your requested medicines below to reserve your items for express pickup.</p>
+                </div>
+
+                <form id="orderForm" onsubmit="submitForm(event)" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Customer Name *</label>
+                            <input type="text" id="custName" required placeholder="Juan Dela Cruz" class="w-full px-4 py-3 border border-slate-300 rounded-xl text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white min-h-[48px]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Mobile / Viber Number *</label>
+                            <input type="tel" id="custPhone" required placeholder="0917XXXXXXX" class="w-full px-4 py-3 border border-slate-300 rounded-xl text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white min-h-[48px]">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Requested Medicines & Quantity *</label>
+                        <textarea id="custMeds" rows="3" required placeholder="Example: Amlodipine 5mg (30 pcs), Biogesic (10 pcs)" class="w-full px-4 py-3 border border-slate-300 rounded-xl text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"></textarea>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Preferred Payment Method</label>
+                            <select id="custPayment" class="w-full px-4 py-3 border border-slate-300 rounded-xl text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white min-h-[48px]">
+                                <option value="GCash">GCash Payment</option>
+                                <option value="Maya / QR Ph">Maya / Bank QR Ph</option>
+                                <option value="Cash upon Pickup">Cash upon Pickup</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Fulfillment Option</label>
+                            <select id="custOption" class="w-full px-4 py-3 border border-slate-300 rounded-xl text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white min-h-[48px]">
+                                <option value="Store Pickup (Western Solana Market)">Store Pickup (Western Solana Market)</option>
+                                <option value="Stock Availability Inquiry Only">Stock Availability Inquiry Only</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl transition flex items-center justify-center gap-2 text-sm sm:text-base shadow-md min-h-[48px]">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>Send Order via Viber / Mobile</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Map Section -->
+    <section id="location" class="py-10 sm:py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+                <div>
+                    <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">How to Find Us</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 mb-3 sm:mb-4">Visit Farmacia Cruz</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                        We are conveniently located inside <strong class="text-slate-800">WESTERN SOLANA PUBLIC MARKET, CALILLIAUAN, SOLANA, CAGAYAN</strong>. Accessible for local residents of Calilliauan and surrounding barangays.
+                    </p>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                        <li class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0"></i>
+                            <span>Accessible public transport & tricycle drop-off</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0"></i>
+                            <span>Ample public market parking space</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0"></i>
+                            <span>Open 7 days a week for daily healthcare needs</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 text-center space-y-3 sm:space-y-4 shadow-sm">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
+                        <i data-lucide="map" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                    </div>
+                    <h3 class="font-bold text-base sm:text-lg text-slate-900">WESTERN SOLANA PUBLIC MARKET</h3>
+                    <p class="text-xs text-slate-500">CALILLIAUAN, SOLANA, CAGAYAN</p>
+                    <a href="https://maps.google.com/?q=Western+Solana+Public+Market+Solana+Cagayan" target="_blank" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-emerald-700 hover:text-emerald-800 pt-1">
+                        <span>Open Location in Google Maps</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row items-center gap-3">
+                <img src="src/logo.png" alt="Farmacia Cruz Logo" class="h-10 w-auto bg-white/10 p-1 rounded-lg">
+                <div>
+                    <p class="font-bold text-white text-sm">FARMACIA CRUZ</p>
+                    <p class="mt-0.5 text-[11px]">WESTERN SOLANA PUBLIC MARKET, CALILLIAUAN, SOLANA, CAGAYAN</p>
+                </div>
+            </div>
+            <p>© <span id="year"></span> Farmacia Cruz. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Inventory Data
+        const medicines = [
+            { name: "Amlodipine Besilate", category: "Maintenance", strength: "5mg / 10mg", status: "Available" },
+            { name: "Losartan Potassium", category: "Maintenance", strength: "50mg / 100mg", status: "Available" },
+            { name: "Metformin HCl", category: "Maintenance", strength: "500mg / 850mg", status: "Available" },
+            { name: "Paracetamol (Biogesic / Generic)", category: "OTC / Fever", strength: "500mg", status: "Available" },
+            { name: "Ascorbic Acid + Zinc", category: "Vitamins", strength: "500mg", status: "Available" },
+            { name: "Cetirizine HCl", category: "Allergy", strength: "10mg", status: "Available" },
+            { name: "Mefenamic Acid", category: "Pain Relief", strength: "500mg", status: "Available" },
+            { name: "Amoxicillin", category: "Prescription", strength: "500mg", status: "Available" }
+        ];
+
+        // Render Medicine Table
+        function renderTable(data) {
+            const tbody = document.getElementById('medicineTableBody');
+            tbody.innerHTML = '';
+
+            if(data.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" class="py-4 text-center text-slate-500">No medicine found. Please contact store staff.</td></tr>`;
+                return;
+            }
+
+            data.forEach(med => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50 transition";
+                
+                const isAvailable = med.status === "Available" || med.status === "In Stock";
+                const badgeStyle = isAvailable 
+                    ? "text-emerald-700 bg-emerald-50 border-emerald-200" 
+                    : "text-rose-700 bg-rose-50 border-rose-200";
+
+                tr.innerHTML = `
+                    <td class="py-3 px-3 sm:px-4 font-semibold text-slate-900">${med.name}</td>
+                    <td class="py-3 px-3 sm:px-4"><span class="px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-slate-100 text-slate-700">${med.category}</span></td>
+                    <td class="py-3 px-3 sm:px-4 text-slate-600">${med.strength}</td>
+                    <td class="py-3 px-3 sm:px-4 text-center">
+                        <span class="inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold px-2.5 py-1 rounded-full border ${badgeStyle}">
+                            ${med.status}
+                        </span>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Filter Medicines
+        function filterMedicines() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = medicines.filter(med => 
+                med.name.toLowerCase().includes(query) || 
+                med.category.toLowerCase().includes(query)
+            );
+            renderTable(filtered);
+        }
+
+        // Send Order via Viber Link
+        function submitForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const meds = document.getElementById('custMeds').value;
+            const payment = document.getElementById('custPayment').value;
+            const option = document.getElementById('custOption').value;
+
+            const text = `Hello Farmacia Cruz!\n\nNew Reservation / Order:\nName: ${name}\nPhone: ${phone}\nPayment Method: ${payment}\nOption: ${option}\n\nMedicines Needed:\n${meds}`;
+            
+            const viberUrl = `https://viber.click/09171234567?text=${encodeURIComponent(text)}`;
+            window.open(viberUrl, '_blank');
+        }
+
+        // Initial table load
+        renderTable(medicines);
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
